@@ -4,3 +4,9 @@ steps:
     plugins:
       - docker-compose#v3.9.0:
           run: app
+    key: build
+          
+  - label: ":lock: Snyk Test"
+    command: snyk test
+    key: snyk-test
+    depends_on: build
