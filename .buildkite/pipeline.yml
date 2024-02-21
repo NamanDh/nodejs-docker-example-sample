@@ -7,6 +7,6 @@ steps:
     key: build
           
   - label: ":lock: Snyk Test"
-    command: snyk test
+    command: snyk test --severity-threshold=high --fail-on=all
     key: snyk-test
     depends_on: build
